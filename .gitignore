@@ -27,3 +27,4 @@ nbdist/
 src/test/
 *.jar
 *.war
+*.log

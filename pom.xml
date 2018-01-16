@@ -95,6 +95,18 @@
 	</dependencies>
 
 	<build>
+		<!-- 包含java路径下配置文件的方式 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/**.xml</include>
+					<include>**/**.properties</include>
+				</includes>
+				<!-- 当为ture时，使用properties内变量替代所有符合条件配置文件的占位符 -->
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -102,6 +114,34 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>dev</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<log.level>debug</log.level>
+			</properties>
+		</profile>
+		<profile>
+			<id>product</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>product</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<log.level>error</log.level>
+			</properties>
+		</profile>
+	</profiles>
 
 
 </project>
