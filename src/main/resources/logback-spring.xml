@@ -76,7 +76,7 @@
 
     <!-- root级别 DEBUG -->
     <root>
-        <level value="${log.level}" />
+        <level value="@log.level@" />
         <!-- 控制台输出 -->
         <appender-ref ref="console" />
         <!-- 文件输出 -->

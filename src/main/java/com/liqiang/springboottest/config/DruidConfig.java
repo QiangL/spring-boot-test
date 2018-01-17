@@ -1,4 +1,4 @@
-package com.liqiang.springboottest;
+package com.liqiang.springboottest.config;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.slf4j.Logger;

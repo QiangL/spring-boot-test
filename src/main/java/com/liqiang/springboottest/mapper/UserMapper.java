@@ -1,6 +1,6 @@
 package com.liqiang.springboottest.mapper;
 
-import com.liqiang.springboottest.domin.UserDO;
+import com.liqiang.springboottest.domain.UserDO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

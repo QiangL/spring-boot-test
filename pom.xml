@@ -6,7 +6,7 @@
 	<groupId>com.liqiang</groupId>
 	<artifactId>spring-boot-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-test</name>
 	<description>A Spring Boot Test</description>
@@ -50,10 +50,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -94,26 +94,6 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<!-- 包含java路径下配置文件的方式 -->
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/**.xml</include>
-					<include>**/**.properties</include>
-				</includes>
-				<!-- 当为ture时，使用properties内变量替代所有符合条件配置文件的占位符 -->
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 	<profiles>
 		<profile>
 			<id>dev</id>
@@ -143,5 +123,25 @@
 		</profile>
 	</profiles>
 
+	<build>
+		<!-- 包含java路径下配置文件的方式 -->
+		<resources>
+			<resource>
+				<!-- 当为ture时，使用properties内变量替代所有符合条件配置文件的占位符 -->
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

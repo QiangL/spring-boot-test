@@ -1,4 +1,4 @@
-package com.liqiang.springboottest.domin;
+package com.liqiang.springboottest.domain;
 
 /**
  * @author liqiang (liqiang8@xiaomi.com)
