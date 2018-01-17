@@ -20,7 +20,14 @@ public class UserTestController {
 
     @RequestMapping("/userTest")
     @ResponseBody
-    public String userTest(@RequestParam("id") Integer id) {
-        return "hello " + id;
+    public UserDO userTest(@RequestParam("id") Integer id) {
+        UserDO userDO = userMapper.getUser(id);
+        return userDO;
+    }
+
+    @RequestMapping("helloWorld")
+    @ResponseBody
+    public String helloWorld(){
+        return "hello world";
     }
 }
