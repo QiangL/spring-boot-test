@@ -16,10 +16,13 @@
 
     <select id="listUser" resultMap="userResult">
         select * from USER
-        where id IN
-        <foreach collection="ids" open="(" close=")" item="id" separator=",">
-            id
-        </foreach>
+        <if test="ids != null">
+            where id IN
+            <foreach collection="ids" open="(" close=")" item="id" separator=",">
+                id
+            </foreach>
+        </if>
+
     </select>
 
     <insert id="insertUser" parameterType="userDO">

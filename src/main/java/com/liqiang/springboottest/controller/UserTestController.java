@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author liqiang (liqiang8@xiaomi.com)
  * @Date 2018/1/17
@@ -23,6 +25,11 @@ public class UserTestController {
     public UserDO userTest(@RequestParam("id") Integer id) {
         UserDO userDO = userMapper.getUser(id);
         return userDO;
+    }
+    @RequestMapping("listAllUser")
+    @ResponseBody
+    public List<UserDO> listAllUser(){
+        return userMapper.listUser(null);
     }
 
     @RequestMapping("helloWorld")
