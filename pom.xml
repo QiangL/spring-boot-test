@@ -19,6 +19,8 @@
 	</parent>
 
 	<properties>
+		<!-- Spring boot 替换了占位符格式为@key@,这里换回来 -->
+		<resource.delimiter>${}</resource.delimiter>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -143,5 +145,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
