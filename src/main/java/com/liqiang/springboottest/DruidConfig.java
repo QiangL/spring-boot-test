@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Primary;
 import javax.sql.DataSource;
 
 /**
+ * Druid配置
  * @author liqiang (liqiang8@xiaomi.com)
  * @Date 2018/1/16
  **/
