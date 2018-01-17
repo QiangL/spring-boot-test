@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 /**
  * Druid配置
- * @author liqiang (liqiang8@xiaomi.com)
+ * @author liqiang
  * @Date 2018/1/16
  **/
 @Configuration

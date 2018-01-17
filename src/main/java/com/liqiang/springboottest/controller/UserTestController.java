@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author liqiang (liqiang8@xiaomi.com)
+ * @author liqiang
  * @Date 2018/1/17
  **/
 @RestController
@@ -23,8 +23,7 @@ public class UserTestController {
     @RequestMapping("/userTest")
     @ResponseBody
     public UserDO userTest(@RequestParam("id") Integer id) {
-        UserDO userDO = userMapper.getUser(id);
-        return userDO;
+        return userMapper.getUser(id);
     }
     @RequestMapping("listAllUser")
     @ResponseBody
@@ -34,7 +33,7 @@ public class UserTestController {
 
     @RequestMapping("helloWorld")
     @ResponseBody
-    public String helloWorld(){
-        return "hello world";
+    public String helloWorld(@RequestParam("string")String string){
+        return "hello world "+string;
     }
 }

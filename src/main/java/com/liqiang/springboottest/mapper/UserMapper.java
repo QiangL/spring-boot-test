@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author liqiang (liqiang8@xiaomi.com)
+ * @author liqiang
  * @Date 2018/1/8
  **/
 @Repository

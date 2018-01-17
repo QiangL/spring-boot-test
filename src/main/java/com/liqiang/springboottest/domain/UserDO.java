@@ -1,7 +1,7 @@
 package com.liqiang.springboottest.domain;
 
 /**
- * @author liqiang (liqiang8@xiaomi.com)
+ * @author liqiang
  * @Date 2018/1/8
  **/
 public class UserDO {
