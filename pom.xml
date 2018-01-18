@@ -70,7 +70,11 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.1.6</version>
 		</dependency>
-		<!-- 关于 热加载 的配置:http://www.bubuko.com/infodetail-2447266.html -->
+		<!--
+			关于 热加载 的配置:
+			https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools-restart
+			http://www.bubuko.com/infodetail-2447266.html
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -151,6 +155,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- 热部署可以不配置:https://docs.spring.io/spring-boot/docs/current/maven-plugin/start-mojo.html#fork -->
+				<!--<configuration>
+					<fork>true</fork>
+				</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
