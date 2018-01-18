@@ -70,6 +70,7 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.1.6</version>
 		</dependency>
+		<!-- 关于 热加载 的配置:http://www.bubuko.com/infodetail-2447266.html -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -83,6 +84,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<!-- 注释的原因 http://blog.csdn.net/linjpg/article/details/73733892 -->
 			<!--<scope>provided</scope>-->
 		</dependency>
 		<dependency>
@@ -95,7 +97,6 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
