@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
 
-    <!-- 定义日志文件 输出位置 -->
-    // TODO 动态 工程名
-    <property name="log_dir" value="/home/log/" />
+    <property name="log_dir" value="/home/log/spring-boot-test/web/" />
     <!-- 日志最大的历史 30天 -->
     <property name="maxHistory" value="30" />
 
@@ -23,14 +21,6 @@
         <!-- 过滤器，只记录ERROR级别的日志 -->
         <!-- 果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志。 -->
         <file>error.log</file>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <!-- 设置过滤级别 -->
-            <level>ERROR</level>
-            <!-- 用于配置符合过滤条件的操作 -->
-            <onMatch>ACCEPT</onMatch>
-            <!-- 用于配置不符合过滤条件的操作 -->
-            <onMismatch>DENY</onMismatch>
-        </filter>
         <!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责触发滚动 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--日志输出位置 可相对、和绝对路径 -->
@@ -68,18 +58,18 @@
         </encoder>
     </appender>
 
-    <logger name="com.liqiang.springboot" level="WARN" additivty="true">
+    <logger name="com.liqiang.springboot.web" level="INFO" additivty="true">
         <appender-ref ref="INFO"/>
     </logger>
 
+    <logger name="com.liqiang.springboot.web" level="ERROR" additivty="true">
+        <appender-ref ref="ERROR"/>
+    </logger>
 
 
-    <!-- root级别 DEBUG -->
     <root>
         <level value="${log.level}" />
-        <!-- 控制台输出 -->
         <appender-ref ref="console" />
-        <!-- 文件输出 -->
-        <appender-ref ref="INFO" />
+        <appender-ref ref="INFO"/>
     </root>
 </configuration>
