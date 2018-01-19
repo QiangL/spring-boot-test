@@ -15,17 +15,18 @@ import java.util.List;
  * @Date 2018/1/17
  **/
 @RestController
+@RequestMapping(produces = "application/json")
 public class UserTestController {
 
     @Autowired
     private UserMapper userMapper;
 
     @RequestMapping("/userTest")
-    @ResponseBody
+    @ResponseBody()
     public UserDO userTest(@RequestParam("id") Integer id) {
         return userMapper.getUser(id);
     }
-    @RequestMapping("listAllUser")
+    @RequestMapping(value="listAllUser")
     @ResponseBody
     public List<UserDO> listAllUser(){
         return userMapper.listUser(null);
