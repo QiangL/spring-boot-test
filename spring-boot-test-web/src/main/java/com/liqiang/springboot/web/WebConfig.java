@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.liqiang.springboot")
 /**
  * 扫描servlet和filter，listener的
  */

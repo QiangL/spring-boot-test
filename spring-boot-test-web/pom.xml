@@ -8,16 +8,20 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <artifactId>spring-boot-test-web</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.liqiang</groupId>
+            <artifactId>spring-boot-test-module</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.liqiang</groupId>
             <artifactId>spring-boot-test-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
@@ -62,6 +66,19 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <resources>
+            <resource>
+                <!-- 当为ture时，使用properties内变量替代所有符合条件配置文件的占位符 -->
+                <filtering>true</filtering>
+                <directory>${project.build.directory}/</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 
 
 </project>
