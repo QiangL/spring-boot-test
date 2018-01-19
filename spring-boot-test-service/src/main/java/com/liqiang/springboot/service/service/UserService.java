@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author liqiang (liqiang8@xiaomi.com)
+ * @author liqiang
  * @Date 2018/1/19
  **/
 @Service
