@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * FastJson的配置
- * @author liqiang (liqiang8@xiaomi.com)
+ * @author liqiang
  * @Date 2018/1/18
  **/
 @Configuration
