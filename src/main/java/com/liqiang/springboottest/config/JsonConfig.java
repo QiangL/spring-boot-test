@@ -32,7 +32,7 @@ public class JsonConfig extends WebMvcConfigurerAdapter {
         );
         messageConverter.setFastJsonConfig(fastJsonConfig);
         // 中文解析
-        messageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON_UTF8));
+        //messageConverter.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON_UTF8));
         converters.add(messageConverter);
     }
 }
