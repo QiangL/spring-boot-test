@@ -113,30 +113,5 @@
 				</includes>
 			</resource>
 		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- 热部署可以不配置:https://docs.spring.io/spring-boot/docs/current/maven-plugin/start-mojo.html#fork -->
-				<!--<configuration>
-					<fork>true</fork>
-				</configuration>-->
-				<configuration><!-- 指定该Main Class为全局的唯一入口 -->
-					<mainClass>com.liqiang.springboot.web.WebConfig</mainClass>
-					<layout>WAR</layout>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
-						</goals>
-						<!--可以生成不含依赖包的不可执行Jar包-->
-						<!-- configuration>
-                          <classifier>exec</classifier>
-                        </configuration> -->
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
 	</build>
 </project>
