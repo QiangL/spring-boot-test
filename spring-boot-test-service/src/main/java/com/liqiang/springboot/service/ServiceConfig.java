@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
  * @Date 2018/1/19
  **/
 @SpringBootApplication
-@PropertySource({"classpath:application.properties"})
+@PropertySource("classpath:application-service.properties")
 @ImportAutoConfiguration(ModuleConfig.class)
 public class ServiceConfig {
 

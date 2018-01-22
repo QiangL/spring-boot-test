@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Date 2018/1/19
  **/
 @SpringBootApplication
+@PropertySource("classpath:application-module.properties")
 @MapperScan("com.liqiang.springboot.module.mapper")
 public class ModuleConfig {
 
