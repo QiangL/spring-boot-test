@@ -24,10 +24,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
@@ -40,15 +36,16 @@
             <!-- 注释的原因 http://blog.csdn.net/linjpg/article/details/73733892 -->
             <!--<scope>provided</scope>-->
         </dependency>
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>-->
+
         <!--<dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
@@ -63,6 +60,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!--
+            关于 热加载 的配置:
+            https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools-restart
+            http://www.bubuko.com/infodetail-2447266.html
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
