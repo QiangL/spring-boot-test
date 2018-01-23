@@ -33,6 +33,7 @@
 		<mysql.version>6.0.6</mysql.version>
 		<druid.version>1.1.6</druid.version>
         <fastJson.version>1.2.44</fastJson.version>
+		<shade-plugin.version>3.1.0</shade-plugin.version>
 	</properties>
 
 	<dependencyManagement>
@@ -50,7 +51,7 @@
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid-spring-boot-starter</artifactId>
-				<version>1.1.6</version>
+				<version>${druid.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.alibaba</groupId>
@@ -91,7 +92,7 @@
 				</property>
 			</activation>
 			<properties>
-				<log.level>error</log.level>
+				<log.level>warn</log.level>
 			</properties>
 		</profile>
 	</profiles>
@@ -110,4 +111,5 @@
 			</resource>
 		</resources>
 	</build>
+
 </project>

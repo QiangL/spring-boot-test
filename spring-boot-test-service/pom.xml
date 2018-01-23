@@ -28,16 +28,86 @@
         </dependency>
     </dependencies>
     <build>
-        <resources>
-            <resource>
-                <!-- 当为ture时，使用properties内变量替代所有符合条件配置文件的占位符 -->
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-        </resources>
+        <plugins>
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>com.liqiang</groupId>
+                            <artifactId>spring-boot-test-module</artifactId>
+                            <version>${project.version}</version>
+                            <type>jar</type>
+                            <overWrite>true</overWrite>
+                            <outputDirectory>target/assembly-tmp</outputDirectory>
+                            <includes>logback-spring-*.xml</includes>
+                        </artifactItem>
+                    </artifactItems>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <configuration>
+                    <target>
+                        <concat destfile="${project.build.directory}/result/logback-spring-service.xml" force="yes">
+                            <fileset dir="${project.build.directory}">
+                                <include name="assembly-tmp/logback-spring-*.xml"></include>
+                                <include name="classes/logback-spring-service.xml"></include>
+                            </fileset>
+                        </concat>
+                    </target>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedGroupFilter>com.liqiang</shadedGroupFilter>
+                            <filters>
+                                <filter>
+                                    <artifact>com.liqiang:spring-boot-test-module</artifact>
+                                    <includes>
+                                        <include>**/*.xml</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
+                                    <resource>logback-spring.xml</resource>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>
