@@ -1,4 +1,4 @@
-package com.liqiang.module;
+package com.liqiang.springboot.module;
 
 import com.liqiang.springboot.module.ModuleConfig;
 import org.junit.runner.RunWith;

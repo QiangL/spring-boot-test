@@ -17,9 +17,8 @@
 
     <!-- ERROR级别日志 -->
     <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 RollingFileAppender -->
-    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="SERVICE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 过滤器，只记录ERROR级别的日志 -->
-        <!-- 果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志。 -->
         <file>service-error.log</file>
         <!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责触发滚动 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -38,7 +37,7 @@
         </encoder>
     </appender>
 
-    <appender name="SERVICE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="SERVICE-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>service-info.log</file>
         <!-- 基于文件大小和时间的双重滚动策略 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
@@ -77,20 +76,16 @@
         </encoder>
     </appender>
 
-    <logger name="com.liqiang.springboot.module" level="INFO" additivty="true">
-        <appender-ref ref="MODULE-INFO"/>
-    </logger>
-    <logger name="com.liqiang.springboot.service" level="INFO" additivty="true">
-        <appender-ref ref="SERVICE_INFO"/>
+    <logger name="com.liqiang.springboot" level="INFO" additivty="false">
+        <appender-ref ref="SERVICE-INFO"/>
     </logger>
 
     <logger name="com.liqiang.springboot" level="ERROR" additivty="true">
-        <appender-ref ref="ERROR"/>
+        <appender-ref ref="SERVICE-ERROR"/>
     </logger>
 
 
-    <root>
-        <level value="${log.level}" />
+    <root level="${log.level}">
         <appender-ref ref="console" />
     </root>
 </configuration>
