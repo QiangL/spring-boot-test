@@ -75,13 +75,39 @@
             </pattern>
         </encoder>
     </appender>
+    <appender name="ALL-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>all-error.log</file>
+        <!-- 基于文件大小和时间的双重滚动策略 -->
+         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">  
+            <level>ERROR</level>  
+        </filter>  
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                <!-- 每日 指定大小(单文件100M)分割 -->
+                ${log_dir}/all-error.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
 
-    <logger name="com.liqiang.springboot" level="INFO" additivty="false">
+    <logger name="com.liqiang.springboot.module" level="INFO" additivty="false">
         <appender-ref ref="SERVICE-INFO"/>
     </logger>
 
-    <logger name="com.liqiang.springboot" level="ERROR" additivty="true">
+    <logger name="com.liqiang.springboot.service" level="INFO" additivty="true">
         <appender-ref ref="SERVICE-ERROR"/>
+    </logger>
+
+    <logger name="com.liqiang.springboot" level="ERROR" additivty="true">
+        <appender-ref ref="ALL-ERROR"/>
     </logger>
 
 
