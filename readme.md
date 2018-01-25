@@ -13,7 +13,7 @@ this is a project for precticing of spring boot
 9. mybatis 的注解使用 避免 alis和module在配置文件和代码都要定义的问题
 10. 测试 powerMock能使用
 11. logger 配置文件的properties格式 比xml更省力
-12. 日志配置
+12. 日志配置 additivty继承，不看父logger的level，统统打入父的appender中，如需过滤，需要用Filter
 
 # maven 插件
 * shade 合并依赖文件成一个jar，包括合并资源文件
