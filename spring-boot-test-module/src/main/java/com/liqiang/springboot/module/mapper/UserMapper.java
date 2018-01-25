@@ -2,6 +2,7 @@ package com.liqiang.springboot.module.mapper;
 
 import com.liqiang.springboot.module.domain.UserDO;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.type.Alias;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

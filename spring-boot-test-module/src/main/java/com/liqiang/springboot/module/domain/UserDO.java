@@ -1,9 +1,14 @@
 package com.liqiang.springboot.module.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @author liqiang
  * @Date 2018/1/8
  **/
+@Data
+@NoArgsConstructor
 public class UserDO {
 
     private Integer id;
@@ -12,42 +17,4 @@ public class UserDO {
 
     private String pwd;
 
-    public UserDO(String userName, String pwd) {
-        this.userName = userName;
-        this.pwd = pwd;
-    }
-    public UserDO(){}
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDO{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", pwd='" + pwd + '\'' +
-                '}';
-    }
 }

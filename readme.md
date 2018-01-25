@@ -17,4 +17,4 @@ this is a project for precticing of spring boot
 
 # maven 插件
 * shade 合并依赖文件成一个jar，包括合并资源文件
-* dependency 将jar的依赖导入到当前工程
+* dependency 将jar的依赖导入到当前工程,不过也能导入配置文件，但不能合并
